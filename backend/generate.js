@@ -8,8 +8,7 @@ module.exports = function () {
         name: faker.commerce.productName(),
         price: faker.commerce.price(),
         imageUrl: faker.image.food(),
-        maxContentLength: Infinity,
-        maxBodyLength: Infinity
+  
       }
     }),
   }
