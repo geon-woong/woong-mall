@@ -43,7 +43,7 @@ export default {
   // env config
   env: {
     baseURL : process.env.NODE_ENV ===  'production' 
-    ? 'https://my-json-server/geon-woong/woong-mall-api' 
+    ? 'https://my-json-server.typicode.com/geon-woong/woong-mall-api' 
     : 'http://localhost:3000',
   },
 
