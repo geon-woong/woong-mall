@@ -4,9 +4,7 @@
           <h3 class="logo" @click="goHome">Woong-mall</h3>
       </header>
           <Nuxt></Nuxt>
-      <footer>
         <div class="logo"></div>
-      </footer>
   </div>
 </template>
 

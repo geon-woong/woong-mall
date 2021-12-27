@@ -14,7 +14,7 @@
       </ul>
       </div>
     </main>
-    <div class="cart-wrapper">
+    <div class="cart-wrapper" @click="goToCart">
           <button class="btn" >
                  <span style="padding-right:5px">
                  Cart
@@ -47,6 +47,9 @@ export default {
     methods: {
       moveToDetil(id){
         this.$router.push(`detail/${id}`);
+      },
+      goToCart(){
+        this.$router.push(`/cart`)
       },
       async searchProducts(){
         const response = await fetchProductByKeyword(this.searchKeyword)

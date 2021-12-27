@@ -6,20 +6,28 @@
         <div class="side-panel">
             <p>{{product.title}}</p>
             <span>{{product.price}} &#36;</span>
-            <button class="btn">ADD TO CART</button>
+            <button class="btn" @click="addToCart" >ADD TO CART</button>
         </div>
       </div>
   </div>
 </template>
 
 <script>
-import { fetchproductById } from "../../api"
+import { createCartItem, fetchproductById } from "../../api"
 export default {
     async asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
        const response = await fetchproductById(params.id)
         const product = response.data
        return { product }
     },
+    methods: {
+      async addToCart(){
+        const response = await createCartItem(this.product);
+        console.log(response)
+        this.$store.commit('addCartItem', this.product);
+        this.$router.push('/cart')
+      }
+    }
 
 }
 </script>

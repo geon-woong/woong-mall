@@ -20,4 +20,16 @@ function resetProductList(keyword){
     return instance.get(`/products`)
 }
 
-export{ fetchproductById, fetchProductByKeyword, resetProductList }
+function fetchCartItems(){
+    return instance.get('/carts')
+}
+
+function createCartItem(cartItem){
+    return instance.post('/carts', cartItem)
+}
+
+function deleteCartItem(cartItem){
+    return instance.delete('/carts', cartItem)
+}
+
+export{ fetchproductById, fetchProductByKeyword, resetProductList,createCartItem,fetchCartItems,deleteCartItem }
